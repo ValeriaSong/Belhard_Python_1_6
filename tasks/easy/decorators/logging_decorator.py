@@ -17,6 +17,7 @@ def log_decorator(func):
         return res
     return wrapper
 
+
 @log_decorator
 def hello(name):
     print(f"Привет, {name}")
