@@ -18,3 +18,23 @@ https://pyneng.readthedocs.io/ru/latest/book/10_useful_functions/all_any.html
     "kwargs_max_len": 7
 }
 """
+
+
+def dict_from_args(*args, **kwargs):
+    summa = 0
+    values = kwargs.values()
+    for n in args:
+        if type(n) == int:
+            summa = summa + n
+        else:
+            raise TypeError("Все позиционные аргументы должны быть целыми")
+    for m in values:
+        if type(m) == str:
+            word = max(values, key=len)
+            dlina = len(word)
+        else:
+            raise TypeError("Все аргументы - ключевые слова должны быть строками")
+    return {
+    "args_sum": summa,
+    "kwargs_max_len": dlina
+}
