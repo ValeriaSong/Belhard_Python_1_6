@@ -28,7 +28,6 @@ def incr_students(school_data, klass):
     return value
 
 
-
 def decr_students(school_data, klass):
     school_data[klass] = school_data.get(klass) - 1
     value = school_data.get(klass)
